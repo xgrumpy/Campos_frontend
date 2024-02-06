@@ -1,0 +1,31 @@
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 120px;
+    width: 80%;
+    margin: auto;
+
+    &_logo {
+        width: 148px;
+        height: 64px;
+    }
+
+    &_links {
+        display: flex;
+        align-items: center;
+    }
+
+    .icon {
+        color: #ffffff;
+    }
+
+    .navitem_container {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .icon_container {
+        margin-left: 350px;
+    }
+}

@@ -1,0 +1,38 @@
+.container {
+    width: 75%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    padding: 80px;
+
+    .image {
+        width: 375px;
+        height: 467px;
+    }
+
+    .leftcontent {
+        margin-left: 100px;
+
+        .title {
+            color: black;
+            font-size: 48px;
+            font-weight: 500;
+        }
+
+        .subtitle {
+            font-size: 15px;
+            color: #626262;
+            font-weight: 400;
+        }
+
+        .button {
+            font-size: 14px;
+            font-weight: 500;
+            font-family: Oswald;
+            line-height: 21px;
+            background-color: #283897;
+            padding: 10px 15px;
+            margin-top: px;
+        }
+    }
+}

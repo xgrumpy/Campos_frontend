@@ -1,0 +1,64 @@
+.container {
+    padding: 50px 0;
+    align-items: center;
+    flex-direction: column;
+    display: flex;
+
+    .title {
+        text-align: center;
+        margin-bottom: 50px;
+        font-size: 32px;
+        font-weight: 400;
+        color: black;
+    }
+
+    .morebutton {
+        margin: 60px 0;
+        background-color: #ED1E24;
+        color: white;
+        font-size: 14px;
+    }
+
+    .content {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 60%;
+        margin: auto;
+
+        .item {
+            width: 200px;
+            height: 358px;
+            padding: 30px;
+            box-shadow: 2px 3px #403d3d;
+            border: gray solid 1px;
+
+            .itemname {
+                font-size: 20px;
+                color: black;
+                font-weight: 500;
+                margin-top: 50px;
+            }
+
+            .itemimage {
+                width: 200px;
+                height: 200px;
+            }
+
+            .itemprice {
+                font-weight: 500;
+                font-size: 16px;
+                color: #283897;
+            }
+
+            .itembutton {
+                width: 200px;
+                background-color: black;
+                color: white;
+            }
+        }
+    }
+
+
+
+}
