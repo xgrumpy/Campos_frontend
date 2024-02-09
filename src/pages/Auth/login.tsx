@@ -5,6 +5,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { Modal } from 'react-responsive-modal'
 import axios from 'axios';
 import 'react-toastify/dist/ReactToastify.css';
+import { RootState } from '../../redux/reducers/index'; // Import your root reducer type
 
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
@@ -21,6 +22,7 @@ import { loginAction } from "../../redux/actions/authAction";
 const theme = createTheme();
 
 const Login = () => {
+
     const [email, setEmail] = React.useState("");
     const [password, setPassword] = React.useState("");
     const [open, setOpen] = React.useState(false);
@@ -36,7 +38,14 @@ const Login = () => {
 
     const onOpenModal = () => setOpen(true)
     const onCloseModal = () => setOpen(false)
+    const savedData = useSelector((state:RootState) =>state.authReducer);
 
+    React.useEffect(() => {
+        console.log("HERERERE ")
+        // This code will run after the component has been rendered
+        {typeof savedData.auth === 'string' ? console.log("HERERERE ",savedData.auth) : null}
+    }, []); // Empty dependency array means this effect runs once after the initial render
+    
     // React.useEffect(() => {
         // if (loading) {
         //     <h1 style={{ fontSize: "50px" }}>Loading Please wait</h1>

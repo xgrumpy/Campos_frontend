@@ -1,0 +1,18 @@
+@import  'https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback';
+.MuiDataGrid-columnHeader {
+    background: #283897;
+    color: #fff;
+}.MuiDataGrid-cell,.MuiDataGrid-columnHeader {
+    border: 1px solid #fff !important;
+}.user-panel i.fas.fa-user {
+    font-size: 30px;color: #283897;
+}.user-panel b {
+    font-size: 22px;
+}.MuiButtonBase-root{color:#fff !important;}
+.sidebar-dark-primary .nav-sidebar>.nav-item>.nav-link, .sidebar-light-primary .nav-sidebar>.nav-item>.nav-link {
+    background-color: #283897;
+    color: #fff;
+}
+.sidebar-dark-primary .nav-sidebar>.nav-item>.nav-link.active, .sidebar-light-primary .nav-sidebar>.nav-item>.nav-link.active {
+    background-color:#ED1E24!important;
+}
