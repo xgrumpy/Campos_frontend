@@ -24,7 +24,7 @@ export const loginAction = (data: any) => {
         },
     };
 
-    const result = axios.post('https://localhost:3030/auth/login', posting_data, config);
+    const result = axios.post('https://api.totalmoto.net/user/login', posting_data, config);
 
     console.log(result);
     
