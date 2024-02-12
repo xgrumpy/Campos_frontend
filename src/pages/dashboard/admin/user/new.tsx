@@ -10,23 +10,8 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import SendIcon from '@mui/icons-material/Send';
 import Stack from '@mui/material/Stack';
 import '../../../Auth/dashboard.scss';
-import '../../../../assets/admin/plugins/fontawesome-free/css/all.min.css';
-import '../../../../assets/admin/dist/css/adminlte.min.css';
-import '../../../../assets/admin/dataTables.css';
-import '../../../../assets/admin/plugins/jquery/jquery.min.js'; // Import the JavaScript file
-import '../../../../assets/admin/plugins/bootstrap/js/bootstrap.bundle.min.js'; // Import the JavaScript file
-import '../../../../assets/admin/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js'; // Import the JavaScript file
-import '../../../../assets/admin/dist/js/adminlte.js'; // Import the JavaScript file
-import '../../../../assets/admin/plugins/jquery-mousewheel/jquery.mousewheel.js'; // Import the JavaScript file
-import '../../../../assets/admin/plugins/raphael/raphael.min.js'; // Import the JavaScript file
-import '../../../../assets/admin/plugins/jquery-mapael/jquery.mapael.min.js'; // Import the JavaScript file
-import '../../../../assets/admin/plugins/jquery-mapael/maps/usa_states.min.js'; // Import the JavaScript file
-import '../../../../assets/admin/plugins/chart.js/Chart.min.js'; // Import the JavaScript file
-import '../../../../assets/admin/dist/js/demo.js'; // Import the JavaScript file
-import '../../../../assets/admin/dist/js/pages/dashboard2.js'; // Import the JavaScript file
-import '../../../../assets/admin/dist/js/pages/dashboard2.js'; // Import the JavaScript file
-import '../../../../assets/admin/dist/js/dataTables.js'; // Import the JavaScript file
-import '../../../../assets/admin/dist/js/custom.js'; // Import the JavaScript file
+import LeftNav from '../leftNav';
+
 import axios from 'axios';
 import { RootState } from '../../../../redux/reducers';
 const New = () => {
@@ -158,130 +143,7 @@ const New = () => {
       </MuiAlert>
     </Snackbar>
 <div className="wrapper">
-  <nav className="main-header navbar navbar-expand navbar-white navbar-light">
-    <ul className="navbar-nav">
-      <li className="nav-item">
-        <a className="nav-link" data-widget="pushmenu" href="#" role="button"><i className="fas fa-bars"></i></a>
-      </li>
-      <li className="nav-item d-none d-sm-inline-block">
-        <a href="index3.html" className="nav-link">Home</a>
-      </li>
-      <li className="nav-item d-none d-sm-inline-block">
-        <a href="#" className="nav-link">Contact</a>
-      </li>
-    </ul>
-
-    <form className="form-inline ml-3">
-      <div className="input-group input-group-sm">
-        <input className="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search" />
-        <div className="input-group-append">
-          <button className="btn btn-navbar" type="submit">
-            <i className="fas fa-search"></i>
-          </button>
-        </div>
-      </div>
-    </form>
-
-    <ul className="navbar-nav ml-auto">
-     
-      <li className="nav-item dropdown">
-        <a className="nav-link" data-toggle="dropdown" href="#">
-        Alexander Pierce <span className="fas fa-user"></span>
-        </a>
-        <div className="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-          <span className="dropdown-item dropdown-header">My Account</span>
-          <div className="dropdown-divider"></div>
-          <a href="#" className="dropdown-item">
-            <i className="fas fa-sign-out mr-2"></i> Logout
-          </a>
-          <div className="dropdown-divider"></div>
-        </div>
-      </li>
-    </ul>
-  </nav>
-
-  <aside className="main-sidebar sidebar-dark-primary elevation-4">
-    <a href="index3.html" className="brand-link">
-      <img src="../../assets/logo-ride.jpg" alt="AdminLTE Logo" className="brand-image img-circle elevation-3" style={{opacity: ".8"}} />
-      <span className="brand-text font-weight-light">RideSmart</span>
-    </a>
-    <div className="sidebar">  
-      <nav className="mt-2">
-        <ul className="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-          <li className="nav-item menu-open">
-            <a href="#" className="nav-link active">
-              <i className="nav-icon fas fa-users"></i>
-              <p>
-                Users
-                <i className="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul className="nav nav-treeview">
-              <li className="nav-item">
-                <a href="./index.html" className="nav-link">
-                  <i className="far fa-circle nav-icon"></i>
-                  <p>New User</p>
-                </a>
-              </li>
-              <li className="nav-item">
-                <a href="./index2.html" className="nav-link active">
-                  <i className="far fa-circle nav-icon"></i>
-                  <p>Users List</p>
-                </a>
-              </li>
-            </ul>
-          </li>
-          <li className="nav-item menu">
-            <a href="#" className="nav-link">
-              <i className="nav-icon fas fa-newspaper"></i>
-              <p>
-                Articles
-                <i className="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul className="nav nav-treeview">
-              <li className="nav-item">
-                <a href="./index.html" className="nav-link">
-                  <i className="far fa-circle nav-icon"></i>
-                  <p>New Article</p>
-                </a>
-              </li>
-              <li className="nav-item">
-                <a href="./index2.html" className="nav-link active">
-                  <i className="far fa-circle nav-icon"></i>
-                  <p>Articles List</p>
-                </a>
-              </li>
-            </ul>
-          </li>
-          <li className="nav-item">
-            <a href="#" className="nav-link">
-              <i className="nav-icon fas fa-calendar"></i>
-              <p>
-                Events
-                <i className="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul className="nav nav-treeview">
-              <li className="nav-item">
-                <a href="./index.html" className="nav-link">
-                  <i className="far fa-circle nav-icon"></i>
-                  <p>New Event</p>
-                </a>
-              </li>
-              <li className="nav-item">
-                <a href="./index2.html" className="nav-link">
-                  <i className="far fa-circle nav-icon"></i>
-                  <p>Events List</p>
-                </a>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </nav>
-    </div>
-  </aside>
-
+<LeftNav />
   <div className="content-wrapper">
     <div className="content-header">
       <div className="container-fluid">
