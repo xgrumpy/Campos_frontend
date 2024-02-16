@@ -8,7 +8,7 @@ import LeftNav from '../dashboard/admin/leftNav';
 import EmailIcon from '@mui/icons-material/Email';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import EditIcon from '@mui/icons-material/Edit';
-
+import { Context } from "./Context";
 import DeleteIcon from '@mui/icons-material/Delete';
 import axios from 'axios';
 const columns: GridColDef[] = [
@@ -73,7 +73,6 @@ const handleDeleteClick = (id:any) => {
 const Dashboard = () => {
     const savedData = useSelector((state:RootState) =>state.authReducer);
     const [searchText, setSearchText] = React.useState('');
-
     {typeof savedData.auth === 'string' ?  console.log("email",savedData.auth) : null}
     const [data, setData] = React.useState([]);
     const [loading, setLoading] = React.useState(true);
@@ -120,9 +119,9 @@ const Dashboard = () => {
         value && value.toString().toLowerCase().includes(searchText.toLowerCase())
     )
   );
-    if (loading) {
+    /*if (loading) {
       return <p>Loading...</p>;
-    }
+    }*/
   return (
     <div>
     <div className="wrapper">
@@ -147,7 +146,7 @@ const Dashboard = () => {
           <div className="container-fluid">
             <div className='row'>
             <div className="col-3 col-sm-12 col-md-3">
-              <div><i className="fas fa-user"></i>  <b>User Management</b></div>
+              <div><i className="fas fa-user"></i>  <b>User Management </b></div>
               </div>
               <div className="col-7 col-sm-12 col-md-7">
                 <input
@@ -195,7 +194,7 @@ const Dashboard = () => {
       </aside>
 
       <footer className="main-footer">
-        <strong>Copyright &copy; 2014-2020 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
+        <strong>Copyright &copy; 2024 .</strong>
         All rights reserved.
         <div className="float-right d-none d-sm-inline-block">
           <b>Version</b> 3.1.0-pre

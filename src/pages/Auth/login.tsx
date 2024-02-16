@@ -6,7 +6,7 @@ import { Modal } from 'react-responsive-modal'
 import axios from 'axios';
 import 'react-toastify/dist/ReactToastify.css';
 import { RootState } from '../../redux/reducers/index'; // Import your root reducer type
-
+import { Context } from "./Context";
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -29,7 +29,7 @@ const Login = () => {
     // const [loading] = useAuthState(auth);
     const [registereEmail, setRegisteredEmail] = React.useState("");
     const [agreeStatus, setAgreeStatus] = React.useState<null | boolean>(null);
-
+    const { items, setItems } = React.useContext(Context);
     const dispatch = useDispatch();
     let navigate = useNavigate();
 
@@ -60,13 +60,12 @@ const Login = () => {
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-
         const data = {
             user_email: email,
             user_password: password
         }
-
         dispatch(loginAction(data));
+         setItems(1);
         console.log(email + password);
     };
 
