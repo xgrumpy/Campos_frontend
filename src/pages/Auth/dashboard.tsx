@@ -12,7 +12,7 @@ import { Context } from "./Context";
 import DeleteIcon from '@mui/icons-material/Delete';
 import axios from 'axios';
 const columns: GridColDef[] = [
-  { field: 'id', headerName: 'ID', width: 90 },
+  { field: 'id', headerName: 'ID', width: 260 },
   {
     field: 'firstName',
     headerName: 'First name',
@@ -28,7 +28,7 @@ const columns: GridColDef[] = [
   {
     field: 'email',
     headerName: 'Email',
-    width: 110,
+    width: 175,
     editable: true,
   },
   {
@@ -38,15 +38,9 @@ const columns: GridColDef[] = [
     editable: true
   },
   {
-    field: '__v',
-    headerName: '__v',
-    width: 110,
-    editable: true,
-  },
-  {
     field: 'actions',
     headerName: 'Actions',
-    width: 200,
+    width: 250,
     renderCell: (params) => (
       <div>
         <IconButton onClick={handleMailClick} aria-label="Mail"  style={{ color: 'red' }}>
@@ -60,7 +54,7 @@ const columns: GridColDef[] = [
         </IconButton>
       </div>
     ),
-  },
+  }
 ];
 const handleMailClick = () => {
   // Handle the click event for the mail button
@@ -98,9 +92,14 @@ const Dashboard = () => {
             const newItem = { ...item, id: item._id,role:roles };
             // Remove the old key
             delete newItem._id;
+            delete newItem.password;
+            delete newItem.roles;
+            delete newItem._v;
+
            // delete newItem.roles;          
             return newItem;
-          });         
+          });   
+          console.log("newArray",newArray)      
           setData(newArray);
           setLoading(false);
         } catch (error) {

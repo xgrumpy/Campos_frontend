@@ -15,11 +15,11 @@ import axios from 'axios';
 const Events = () => {
   //grid columns
   const columns: GridColDef[] = [
-    { field: 'id', headerName: 'ID', width: 90 },
+    { field: 'id', headerName: 'ID', width: 300 },
     {
       field: 'name',
       headerName: 'Name',
-      width: 150,
+      width: 203,
       editable: true,
     },
     {
@@ -41,27 +41,9 @@ const Events = () => {
       editable: true,
     },
     {
-      field: 'createdAt',
-      headerName: 'createdAt',
-      width: 110,
-      editable: true,
-    },
-    {
-      field: 'updatedAt',
-      headerName: 'updatedAt',
-      width: 200,
-      editable: true
-    },
-    {
-      field: '__v',
-      headerName: '__v',
-      width: 110,
-      editable: true,
-    },
-    {
       field: 'actions',
       headerName: 'Actions',
-      width: 200,
+      width: 290,
       renderCell: (params) => (
         <div>
           <IconButton onClick={handleMailClick} aria-label="Mail"  style={{ color: 'red' }}>
