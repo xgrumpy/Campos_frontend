@@ -135,7 +135,7 @@ const Events = () => {
         </DialogContent>
         <DialogActions> 
           <Button className="custombuttonstyle" onClick={handleCancel}>Cancel</Button>
-          <Button className="custombuttonstyle" onClick={handleSubmit} type="submit">Subscribe</Button>
+          <Button className="custombuttonstyle" onClick={handleSubmit} type="submit">Save</Button>
         </DialogActions>
       </Dialog>
         </div>
