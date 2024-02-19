@@ -18,3 +18,45 @@
 }button[aria-label=Mail] svg {color:rgb(40, 56, 151)!important;}
 button[aria-label=Delete] svg{color:#ED1E24!important;}
 button.custombuttonstyle{background-color:#283897!important;}
+button.MuiButtonBase-root.MuiIconButton-root.MuiIconButton-colorInherit.MuiIconButton-sizeMedium.css-zylse7-MuiButtonBase-root-MuiIconButton-root {
+    color: #fff!important;
+    background: #283897;margin-left: 6px;
+}p.MuiTablePagination-displayedRows.css-levciy-MuiTablePagination-displayedRows {
+    margin-bottom: 0;
+}
+
+.custom-input{
+    border: none;
+    border-bottom: 2px solid black;
+    &:focus-visible{
+        outline: none;
+    }
+}
+
+
+.fa-search:before {
+    border-bottom: 2px solid black;
+    padding: 6px 8px 5px 10px;
+    background-color: white;
+}
+
+.hero{
+    display: flex;
+}
+
+@media (max-width: 575px){
+    .hero{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.input-field{
+    margin-right: 200px;
+    width: 200px;
+    display: inline-block;
+}
+
+.add-user{
+    margin-right: 50px;
+}

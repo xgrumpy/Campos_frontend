@@ -75,7 +75,7 @@ const leftNav = () => {
             </nav>
 
             <aside className="main-sidebar sidebar-dark-primary elevation-4">
-                <a href="index3.html" className="brand-link">
+                <a href="/dashboard" className="brand-link">
                 <img src="../../assets/logo-ride.jpg" alt="AdminLTE Logo" className="brand-image img-circle elevation-3" style={{opacity: ".8"}} />
                 <span className="brand-text font-weight-light">RideSmart</span>
                 </a>

@@ -275,18 +275,18 @@ const Events = () => {
                 'Authorization': 'Bearer '+loginresponse
               }
             };
-   const response =await axios.put("https://api.totalmoto.net/events/" + eventid, {
-  "date": "2024-02-24",
-  "name": "NEW JERSEY THUNDERBOLT",
-  "totalNumberAvailable": {
-    "novice": 5,
-    "intermediate": 5,
-    "experienced": 3,
-    "advanced": 4
-  },
-  "price": 250,
-  "location": "New Jersey, 8000 Dividing Creek Road, Millville, NJ"
-},reqheader)
+        const response =await axios.put("https://api.totalmoto.net/events/" + eventid, {
+        "date": "2024-02-24",
+        "name": "NEW JERSEY THUNDERBOLT",
+        "totalNumberAvailable": {
+          "novice": 5,
+          "intermediate": 5,
+          "experienced": 3,
+          "advanced": 4
+        },
+        "price": 250,
+        "location": "New Jersey, 8000 Dividing Creek Road, Millville, NJ"
+      },reqheader)
         .then(response => {
         // Handle the data from the response
           console.log(response.data)
@@ -408,17 +408,19 @@ const Events = () => {
       <div className="container-fluid">
         <div className='row'>
         <div className="col-3 col-sm-12 col-md-3">
-          <div><i className="fas fa-user"></i>  <b>Events</b></div>
+          <div><i className="fas fa-calendar"></i>  <b>Events</b></div>
           </div>
-          <div className="col-9 col-sm-12 col-md-9">
-            <input
-            type="text"
-            placeholder="Search..."
-            value={searchText}
-            onChange={(e) => setSearchText(e.target.value)}
-            style={{ marginBottom: 16 }}
-          />
-           </div>
+          <div className="col-5">
+                <div><i className='fas fa-search'></i>
+                <input
+                className='custom-input'
+                type="text"
+                placeholder="Search..."
+                value={searchText}
+                onChange={(e) => setSearchText(e.target.value)}
+                style={{ marginBottom: 16 }}
+              /></div>
+              </div>
          </div>
         <div className="row">
         <div className="col-12 col-sm-12 col-md-12">
