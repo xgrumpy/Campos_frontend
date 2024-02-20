@@ -42,7 +42,13 @@ button.MuiButtonBase-root.MuiIconButton-root.MuiIconButton-colorInherit.MuiIconB
 
 .hero{
     display: flex;
-}
+}.css-ptkaw2-MuiDataGrid-root .MuiDataGrid-cellContent {
+    overflow: hidden;
+    text-align: center !important;
+    text-overflow: ellipsis;
+    margin: 0 auto;
+}.MuiDataGrid-columnHeaders .MuiDataGrid-checkboxInput svg path{color:#fff !important;}
+.MuiDataGrid-checkboxInput svg path{color:#283897 !important;}
 
 @media (max-width: 575px){
     .hero{
@@ -51,12 +57,9 @@ button.MuiButtonBase-root.MuiIconButton-root.MuiIconButton-colorInherit.MuiIconB
     }
 }
 
-.input-field{
-    margin-right: 200px;
-    width: 200px;
-    display: inline-block;
+@media (min-width: 615px) and (max-width: 758px){
+    .top-header .navbar-nav a.nav-link{
+        padding-left: 0rem;
+    }
 }
 
-.add-user{
-    margin-right: 50px;
-}

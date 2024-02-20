@@ -88,7 +88,6 @@ const Events = () => {
             label="Id"
             type="text"
             fullWidth
-            variant="standard"
           />
           <TextField
             autoFocus
@@ -152,6 +151,9 @@ const Events = () => {
     const savedData = useSelector((state:RootState) =>state.authReducer);
     const [searchText, setSearchText] = React.useState('');
     const [eventid, setEventid] = React.useState('');
+    const [open, setOpen] = React.useState(false);
+    const [message, setMessage] = React.useState('');
+    const [severity, setSeverity] = React.useState('');
     const [loginresponse, setLoginresponse] = React.useState("");
     const [opendialog, setOpendialog] = React.useState(false);
     {typeof savedData.auth === 'string' ?  console.log("email",savedData.auth) : null}
@@ -242,6 +244,42 @@ const Events = () => {
         // Handle delete action here
         console.log(`https://api.totalmoto.net/events/${id}`);
       };
+      // New event add
+  //HANDLE SUBMIT
+  const handleNewSubmit = async (e:any) => {
+    //alert(validateForm());
+    if (validateForm()) {
+      const data = formData
+      console.log('Form submitted:', formData);
+      const response = await axios.post('https://api.totalmoto.net/user/register', formData).catch(error => {
+        // Check if the error has a status of 500
+        if (error.response && error.response.status === 500) {          
+          setMessage("error");
+          setSeverity("error");
+          setOpen(true);
+        } else {
+          // Handle other types of errors
+          console.error('Error:', error.message);
+        }
+      });
+      if(response) {
+        if(response.status==201 && response.statusText=='Created'){
+          setMessage("success");
+          setSeverity("success");
+          setOpen(true);
+          setOpendialog(false);
+        } else {
+          setMessage("success");
+          setSeverity("error");
+          setOpen(true);
+        }
+      }
+      console.log('API response:', response);
+    } else {
+      console.log('Form has errors. Please correct them.');
+    }
+  };
+
     const handleSubmit = async (e:any) => {
       e.preventDefault();
       if (validateForm()) {
@@ -420,6 +458,91 @@ const Events = () => {
                 onChange={(e) => setSearchText(e.target.value)}
                 style={{ marginBottom: 16 }}
               /></div>
+              </div>
+              <div className="col-2 col-sm-12 col-md-2">
+                  <Button onClick={handleClickOpen} style={buttonStyle} variant="contained" color="primary">
+                   + Add New User
+                   </Button>
+                   <Dialog
+                        open={opendialog}
+                        onClose={handleCancel}
+                        PaperProps={{
+                          component: 'form',
+                          onSubmit: (event: React.FormEvent<HTMLFormElement>) => {
+                            event.preventDefault();
+                            const formData = new FormData(event.currentTarget);
+                            const formJson = Object.fromEntries((formData as any).entries());
+                            const email = formJson.email;
+                            console.log(email);
+                            handleCancel();
+                          },
+                        }}
+                      >
+                        <DialogTitle>New Event</DialogTitle>
+                        <DialogContent>                          
+                          <DialogContentText>
+                          </DialogContentText>
+                          <TextField
+                            autoFocus
+                            margin="dense"
+                            id="date"
+                            onChange={handleChange}
+                            name="date"
+                            label="Date"
+                            type="text"
+                            fullWidth
+                            variant="standard"
+                            error={Boolean(errors.date)}
+                            helperText={errors.date}
+                          />
+                          <TextField
+                            autoFocus
+                            required
+                            onChange={handleChange}
+                            margin="dense"
+                            id="name"
+                            name="name"
+                            label="Name"
+                            type="text"
+                            error={Boolean(errors.name)}
+                            helperText={errors.name}
+                            fullWidth
+                            variant="standard"
+                          />
+                        <TextField
+                            autoFocus
+                            required
+                            onChange={handleChange}
+                            error={Boolean(errors.price)}
+                            helperText={errors.price}
+                            margin="dense"
+                            id="price"
+                            name="price"
+                            label="Price"
+                            type="text"
+                            fullWidth
+                            variant="standard"
+                          />
+                          <TextField
+                            autoFocus
+                            required
+                            onChange={handleChange}
+                            error={Boolean(errors.location)}
+                            helperText={errors.location}
+                            margin="dense"
+                            id="location"
+                            name="location"
+                            label="Location"
+                            type="text"
+                            fullWidth
+                            variant="standard"
+                          />
+                        </DialogContent>
+                        <DialogActions> 
+                          <Button className="custombuttonstyle" onClick={handleCancel}>Cancel</Button>
+                          <Button className="custombuttonstyle" onClick={handleNewSubmit} type="submit">Save</Button>
+                        </DialogActions>
+                      </Dialog>
               </div>
          </div>
         <div className="row">
